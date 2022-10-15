@@ -1,0 +1,2609 @@
+nav {
+    background-image: url("../../src/images/head.jpg");
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.guid-nav {
+    padding: 10px 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guid-nav ul li{
+    display: flex;
+    margin: 0 20px;
+}
+
+.guid-nav ul li div{
+    height: 30px;
+    width: 30px;
+}
+
+.path {
+    
+    background-color: #f6f649;
+    background-size: contain;
+    margin-left: 10px;
+    
+}
+
+.wall {
+    background-color: #282827;
+    margin-left: 10px;
+}
+
+.searched {
+    background-color: #0eeafa;
+    margin-left: 10px;
+}
+
+.goal {
+    background-image: url("../../src/images/finish.png");
+    background-size: contain;
+    margin-left: 10px;
+}
+
+.start {
+    background-image: url("../../src/images/start.png");
+    background-size: contain;
+    margin-left: 10px;
+}
+
+ul{
+    display: flex;
+}
+ul li{
+    list-style-type: none;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.count h4 {
+  margin: 0 20px;
+}
+
+nav .right select {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  border: 5px solid white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+nav .right select option {
+ 
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #4340f4;
+  cursor: pointer;
+}
+
+.pick-algorithm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  
+}
+
+.pick-algorithm select {
+  
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  border: 5px solid rgb(0, 13, 255);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background: transparent;
+  cursor: pointer;
+}
+
+
+.pick-algorithm select option {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #4340f4;
+  cursor: pointer;
+}
+
+button {
+    margin: 0px 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.7s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #2104fe;
+    color: white;
+}
+
+nav .left ul li {
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 0 20px;
+}
+
+.start-algorithm {
+    background-color: #fbff05;
+    
+}
+
+.reset {
+    background-color: #fd3434;
+    color: white;
+}
+.container {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .node {
+    width: 25px;
+    height: 25px;
+    outline: 1px solid rgb(175, 216, 248);
+    display: inline-block;
+  }
+  
+  .node-finish {
+    background: url("../../src/images/finish.png");
+    background-size: contain;
+  }
+  
+  .node-start {
+    background: url("../../src/images/start.png");
+    background-size: contain;
+  }
+  
+  .node-visited {
+    animation-name: visitedAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+  
+  @keyframes visitedAnimation {
+    0% {
+      transform: scale(0.3);
+      background-color: rgba(0, 0, 66, 0.75);
+      border-radius: 100%;
+    }
+  
+    50% {
+      background-color: rgba(17, 104, 217, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(0, 217, 159, 0.75);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgba(0, 190, 218, 0.75);
+
+    }
+  }
+  
+  .node-wall {
+    
+    animation-name: makeNodeWall;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+
+  @keyframes makeNodeWall {
+    0% {
+      transform: scale(0.6);
+      background-color: rgb(12, 53, 71);
+      outline: rgb(12, 53, 71);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(12, 53, 71);
+      outline: rgb(12, 53, 71);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgb(12, 53, 71);
+      outline: rgb(12, 53, 71);
+    }
+  }
+
+
+
+  
+  .node-shortest-path {
+    animation-name: shortestPath;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+  
+  @keyframes shortestPath {
+    0% {
+      transform: scale(0.6);
+      outline: rgb(255, 254, 106);
+      background-image: url("../../src/images/start.png");
+      background-color: rgb(255, 254, 106);
+      background-size: contain;
+      
+    }
+
+  
+    50% {
+      transform: scale(1.2);
+      outline: rgb(255, 254, 106);
+      background-color: rgb(255, 254, 106);
+      background-size: contain;
+      
+    }
+  
+    100% {
+      transform: scale(1);
+      outline: rgb(255, 254, 106);
+      background-color: rgb(255, 254, 106);
+      background-size: contain;
+      background-image: none;
+    }
+  }
+
+
+
+
+
+
+
+
+  @media only screen and (max-width:1273px){
+
+    
+    
+    #row-19 {
+      display:none;
+    }
+
+    #row-18 {
+      display:none;
+    }
+
+    #row-17 {
+      display:none;
+    }
+
+    #row-16 {
+      display:none;
+    }
+
+    #row-15 {
+      display:none;
+    }
+
+    #row-14 {
+      display:none;
+    }
+}
+
+@media only screen and (max-width:1000px){
+  .pick-algorithm{
+    display: block;
+  }
+}
+
+@media only screen and (max-width:600px){
+
+  .pick-algorithm{
+    display: block;
+  }
+
+  nav .left {
+    display: none;
+  }
+
+  nav .right{
+    display: none;
+  }
+
+  #guid-3{
+    display: none;
+  }
+
+  #guid-2{
+    display: none;
+  }
+
+  #guid-1{
+    display: none;
+  }
+
+
+  #row-13 {
+    display:none;
+  }
+
+  #row-12 {
+    display:none;
+  }
+
+
+  #row-11 {
+    display:none;
+  }
+
+  #row-10 {
+    display:none;
+  }
+
+  #row-9 {
+    display:none;
+  }
+
+    #node-0-49 {
+      display: none;
+    }
+
+    #node-0-48 {
+      display: none;
+    }
+
+    #node-0-47 {
+      display: none;
+    }
+
+    #node-0-46 {
+      display: none;
+    }
+    #node-0-45 {
+      display: none;
+    }
+    #node-0-44 {
+      display: none;
+    }
+    #node-0-43 {
+      display: none;
+    }
+    #node-0-42 {
+      display: none;
+    }
+    #node-0-41 {
+      display: none;
+    }
+    #node-0-40 {
+      display: none;
+    }
+    #node-0-39 {
+      display: none;
+    }
+    #node-0-38 {
+      display: none;
+    }
+    #node-0-37 {
+      display: none;
+    }
+    #node-0-36 {
+      display: none;
+    }
+    #node-0-35 {
+      display: none;
+    }
+
+    #node-0-34 {
+      display: none;
+    }
+    #node-0-33 {
+      display: none;
+    }
+    #node-0-32 {
+      display: none;
+    }
+    
+    #node-0-31 {
+      display: none;
+    }
+
+    #node-0-30 {
+      display: none;
+    }
+
+    #node-0-29 {
+      display: none;
+    }
+
+    #node-0-28 {
+      display: none;
+    }
+
+    #node-0-27 {
+      display: none;
+    }
+
+    #node-0-26 {
+      display: none;
+    }
+
+    #node-0-25 {
+      display: none;
+    }
+
+    #node-0-24 {
+      display: none;
+    }
+
+    #node-0-23 {
+      display: none;
+    }
+
+    /* ------------------------ */
+
+    #node-1-49 {
+      display: none;
+    }
+
+    #node-1-48 {
+      display: none;
+    }
+
+    #node-1-47 {
+      display: none;
+    }
+
+    #node-1-46 {
+      display: none;
+    }
+    #node-1-45 {
+      display: none;
+    }
+    #node-1-44 {
+      display: none;
+    }
+    #node-1-43 {
+      display: none;
+    }
+    #node-1-42 {
+      display: none;
+    }
+    #node-1-41 {
+      display: none;
+    }
+    #node-1-40 {
+      display: none;
+    }
+    #node-1-39 {
+      display: none;
+    }
+    #node-1-38 {
+      display: none;
+    }
+    #node-1-37 {
+      display: none;
+    }
+    #node-1-36 {
+      display: none;
+    }
+    #node-1-35 {
+      display: none;
+    }
+
+    #node-1-34 {
+      display: none;
+    }
+    #node-1-33 {
+      display: none;
+    }
+    #node-1-32 {
+      display: none;
+    }
+    
+    #node-1-31 {
+      display: none;
+    }
+
+    #node-1-30 {
+      display: none;
+    }
+
+    #node-1-29 {
+      display: none;
+    }
+
+    #node-1-28 {
+      display: none;
+    }
+
+    #node-1-27 {
+      display: none;
+    }
+
+    #node-1-26 {
+      display: none;
+    }
+
+    #node-1-25 {
+      display: none;
+    }
+
+    #node-1-24 {
+      display: none;
+    }
+
+    #node-1-23 {
+      display: none;
+    }
+
+    /* -------------------------------- */
+
+
+    #node-2-49 {
+      display: none;
+    }
+
+    #node-2-48 {
+      display: none;
+    }
+
+    #node-2-47 {
+      display: none;
+    }
+
+    #node-2-46 {
+      display: none;
+    }
+    #node-2-45 {
+      display: none;
+    }
+    #node-2-44 {
+      display: none;
+    }
+    #node-2-43 {
+      display: none;
+    }
+    #node-2-42 {
+      display: none;
+    }
+    #node-2-41 {
+      display: none;
+    }
+    #node-2-40 {
+      display: none;
+    }
+    #node-2-39 {
+      display: none;
+    }
+    #node-2-38 {
+      display: none;
+    }
+    #node-2-37 {
+      display: none;
+    }
+    #node-2-36 {
+      display: none;
+    }
+    #node-2-35 {
+      display: none;
+    }
+
+    #node-2-34 {
+      display: none;
+    }
+    #node-2-33 {
+      display: none;
+    }
+    #node-2-32 {
+      display: none;
+    }
+    
+    #node-2-31 {
+      display: none;
+    }
+
+    #node-2-30 {
+      display: none;
+    }
+
+    #node-2-29 {
+      display: none;
+    }
+
+    #node-2-28 {
+      display: none;
+    }
+
+    #node-2-27 {
+      display: none;
+    }
+
+    #node-2-26 {
+      display: none;
+    }
+
+    #node-2-25 {
+      display: none;
+    }
+
+    #node-2-24 {
+      display: none;
+    }
+
+    #node-2-23 {
+      display: none;
+    }
+
+    /* ------------------------- */
+
+
+    #node-3-49 {
+      display: none;
+    }
+
+    #node-3-48 {
+      display: none;
+    }
+
+    #node-3-47 {
+      display: none;
+    }
+
+    #node-3-46 {
+      display: none;
+    }
+    #node-3-45 {
+      display: none;
+    }
+    #node-3-44 {
+      display: none;
+    }
+    #node-3-43 {
+      display: none;
+    }
+    #node-3-42 {
+      display: none;
+    }
+    #node-3-41 {
+      display: none;
+    }
+    #node-3-40 {
+      display: none;
+    }
+    #node-3-39 {
+      display: none;
+    }
+    #node-3-38 {
+      display: none;
+    }
+    #node-3-37 {
+      display: none;
+    }
+    #node-3-36 {
+      display: none;
+    }
+    #node-3-35 {
+      display: none;
+    }
+
+    #node-3-34 {
+      display: none;
+    }
+    #node-3-33 {
+      display: none;
+    }
+    #node-3-32 {
+      display: none;
+    }
+    
+    #node-3-31 {
+      display: none;
+    }
+
+    #node-3-30 {
+      display: none;
+    }
+
+    #node-3-29 {
+      display: none;
+    }
+
+    #node-3-28 {
+      display: none;
+    }
+
+    #node-3-27 {
+      display: none;
+    }
+
+    #node-3-26 {
+      display: none;
+    }
+
+    #node-3-25 {
+      display: none;
+    }
+
+    #node-3-24 {
+      display: none;
+    }
+
+    #node-3-23 {
+      display: none;
+    }
+
+    /* ----------------------------- */
+
+    #node-4-49 {
+      display: none;
+    }
+
+    #node-4-48 {
+      display: none;
+    }
+
+    #node-4-47 {
+      display: none;
+    }
+
+    #node-4-46 {
+      display: none;
+    }
+    #node-4-45 {
+      display: none;
+    }
+    #node-4-44 {
+      display: none;
+    }
+    #node-4-43 {
+      display: none;
+    }
+    #node-4-42 {
+      display: none;
+    }
+    #node-4-41 {
+      display: none;
+    }
+    #node-4-40 {
+      display: none;
+    }
+    #node-4-39 {
+      display: none;
+    }
+    #node-4-38 {
+      display: none;
+    }
+    #node-4-37 {
+      display: none;
+    }
+    #node-4-36 {
+      display: none;
+    }
+    #node-4-35 {
+      display: none;
+    }
+
+    #node-4-34 {
+      display: none;
+    }
+    #node-4-33 {
+      display: none;
+    }
+    #node-4-32 {
+      display: none;
+    }
+    
+    #node-4-31 {
+      display: none;
+    }
+
+    #node-4-30 {
+      display: none;
+    }
+
+    #node-4-29 {
+      display: none;
+    }
+
+    #node-4-28 {
+      display: none;
+    }
+
+    #node-4-27 {
+      display: none;
+    }
+
+    #node-4-26 {
+      display: none;
+    }
+
+    #node-4-25 {
+      display: none;
+    }
+
+    #node-4-24 {
+      display: none;
+    }
+
+    #node-4-23 {
+      display: none;
+    }
+
+    /* --------------------- */
+
+    #node-5-49 {
+      display: none;
+    }
+
+    #node-5-48 {
+      display: none;
+    }
+
+    #node-5-47 {
+      display: none;
+    }
+
+    #node-5-46 {
+      display: none;
+    }
+    #node-5-45 {
+      display: none;
+    }
+    #node-5-44 {
+      display: none;
+    }
+    #node-5-43 {
+      display: none;
+    }
+    #node-5-42 {
+      display: none;
+    }
+    #node-5-41 {
+      display: none;
+    }
+    #node-5-40 {
+      display: none;
+    }
+    #node-5-39 {
+      display: none;
+    }
+    #node-5-38 {
+      display: none;
+    }
+    #node-5-37 {
+      display: none;
+    }
+    #node-5-36 {
+      display: none;
+    }
+    #node-5-35 {
+      display: none;
+    }
+
+    #node-5-34 {
+      display: none;
+    }
+    #node-5-33 {
+      display: none;
+    }
+    #node-5-32 {
+      display: none;
+    }
+    
+    #node-5-31 {
+      display: none;
+    }
+
+    #node-5-30 {
+      display: none;
+    }
+
+    #node-5-29 {
+      display: none;
+    }
+
+    #node-5-28 {
+      display: none;
+    }
+
+    #node-5-27 {
+      display: none;
+    }
+
+    #node-5-26 {
+      display: none;
+    }
+
+    #node-5-25 {
+      display: none;
+    }
+
+    #node-5-24 {
+      display: none;
+    }
+
+    #node-5-23 {
+      display: none;
+    }
+
+    /* ----------------------------------------- */
+
+
+    #node-6-49 {
+      display: none;
+    }
+
+    #node-6-48 {
+      display: none;
+    }
+
+    #node-6-47 {
+      display: none;
+    }
+
+    #node-6-46 {
+      display: none;
+    }
+    #node-6-45 {
+      display: none;
+    }
+    #node-6-44 {
+      display: none;
+    }
+    #node-6-43 {
+      display: none;
+    }
+    #node-6-42 {
+      display: none;
+    }
+    #node-6-41 {
+      display: none;
+    }
+    #node-6-40 {
+      display: none;
+    }
+    #node-6-39 {
+      display: none;
+    }
+    #node-6-38 {
+      display: none;
+    }
+    #node-6-37 {
+      display: none;
+    }
+    #node-6-36 {
+      display: none;
+    }
+    #node-6-35 {
+      display: none;
+    }
+
+    #node-6-34 {
+      display: none;
+    }
+    #node-6-33 {
+      display: none;
+    }
+    #node-6-32 {
+      display: none;
+    }
+    
+    #node-6-31 {
+      display: none;
+    }
+
+    #node-6-30 {
+      display: none;
+    }
+
+    #node-6-29 {
+      display: none;
+    }
+
+    #node-6-28 {
+      display: none;
+    }
+
+    #node-6-27 {
+      display: none;
+    }
+
+    #node-6-26 {
+      display: none;
+    }
+
+    #node-6-25 {
+      display: none;
+    }
+
+    #node-6-24 {
+      display: none;
+    }
+
+    #node-6-23 {
+      display: none;
+    }
+
+    /* ---------------------------- */
+
+    #node-7-49 {
+      display: none;
+    }
+
+    #node-7-48 {
+      display: none;
+    }
+
+    #node-7-47 {
+      display: none;
+    }
+
+    #node-7-46 {
+      display: none;
+    }
+    #node-7-45 {
+      display: none;
+    }
+    #node-7-44 {
+      display: none;
+    }
+    #node-7-43 {
+      display: none;
+    }
+    #node-7-42 {
+      display: none;
+    }
+    #node-7-41 {
+      display: none;
+    }
+    #node-7-40 {
+      display: none;
+    }
+    #node-7-39 {
+      display: none;
+    }
+    #node-7-38 {
+      display: none;
+    }
+    #node-7-37 {
+      display: none;
+    }
+    #node-7-36 {
+      display: none;
+    }
+    #node-7-35 {
+      display: none;
+    }
+
+    #node-7-34 {
+      display: none;
+    }
+    #node-7-33 {
+      display: none;
+    }
+    #node-7-32 {
+      display: none;
+    }
+    
+    #node-7-31 {
+      display: none;
+    }
+
+    #node-7-30 {
+      display: none;
+    }
+
+    #node-7-29 {
+      display: none;
+    }
+
+    #node-7-28 {
+      display: none;
+    }
+
+    #node-7-27 {
+      display: none;
+    }
+
+    #node-7-26 {
+      display: none;
+    }
+
+    #node-7-25 {
+      display: none;
+    }
+
+    #node-7-24 {
+      display: none;
+    }
+
+    #node-7-23 {
+      display: none;
+    }
+
+    /* --------------------------- */
+
+
+    #node-8-49 {
+      display: none;
+    }
+
+    #node-8-48 {
+      display: none;
+    }
+
+    #node-8-47 {
+      display: none;
+    }
+
+    #node-8-46 {
+      display: none;
+    }
+    #node-8-45 {
+      display: none;
+    }
+    #node-8-44 {
+      display: none;
+    }
+    #node-8-43 {
+      display: none;
+    }
+    #node-8-42 {
+      display: none;
+    }
+    #node-8-41 {
+      display: none;
+    }
+    #node-8-40 {
+      display: none;
+    }
+    #node-8-39 {
+      display: none;
+    }
+    #node-8-38 {
+      display: none;
+    }
+    #node-8-37 {
+      display: none;
+    }
+    #node-8-36 {
+      display: none;
+    }
+    #node-8-35 {
+      display: none;
+    }
+
+    #node-8-34 {
+      display: none;
+    }
+    #node-8-33 {
+      display: none;
+    }
+    #node-8-32 {
+      display: none;
+    }
+    
+    #node-8-31 {
+      display: none;
+    }
+
+    #node-8-30 {
+      display: none;
+    }
+
+    #node-8-29 {
+      display: none;
+    }
+
+    #node-8-28 {
+      display: none;
+    }
+
+    #node-8-27 {
+      display: none;
+    }
+
+    #node-8-26 {
+      display: none;
+    }
+
+    #node-8-25 {
+      display: none;
+    }
+
+    #node-8-24 {
+      display: none;
+    }
+
+    #node-8-23 {
+      display: none;
+    }
+
+}
+
+@media only screen and (max-width:428px){
+   
+  #node-0-22 {
+    display: none;
+  }
+
+  #node-0-21 {
+    display: none;
+  }
+
+  #node-0-20 {
+    display: none;
+  }
+
+  #node-0-19 {
+    display: none;
+  }
+
+  #node-0-18 {
+    display: none;
+  }
+
+  #node-0-17 {
+    display: none;
+  }
+
+  #node-0-16 {
+    display: none;
+  }
+
+  #node-0-15 {
+    display: none;
+  }
+
+  #node-0-14 {
+    display: none;
+  }
+
+  #node-0-13 {
+    display: none;
+  }
+
+  #node-0-12 {
+    display: none;
+  }
+
+  /* ---------------------------------------------------------------- */
+
+
+  #node-1-22 {
+    display: none;
+  }
+
+  #node-1-21 {
+    display: none;
+  }
+
+  #node-1-20 {
+    display: none;
+  }
+
+  #node-1-19 {
+    display: none;
+  }
+
+  #node-1-18 {
+    display: none;
+  }
+
+  #node-1-17 {
+    display: none;
+  }
+
+  #node-1-16 {
+    display: none;
+  }
+
+  #node-1-15 {
+    display: none;
+  }
+
+  #node-1-14 {
+    display: none;
+  }
+
+  #node-1-13 {
+    display: none;
+  }
+
+  #node-1-12 {
+    display: none;
+  }
+
+  /* ------------------ */
+
+  #node-2-22 {
+    display: none;
+  }
+
+  #node-2-21 {
+    display: none;
+  }
+
+  #node-2-20 {
+    display: none;
+  }
+
+  #node-2-19 {
+    display: none;
+  }
+
+  #node-2-18 {
+    display: none;
+  }
+
+  #node-2-17 {
+    display: none;
+  }
+
+  #node-2-16 {
+    display: none;
+  }
+
+  #node-2-15 {
+    display: none;
+  }
+
+  #node-2-14 {
+    display: none;
+  }
+
+  #node-2-13 {
+    display: none;
+  }
+
+  #node-2-12 {
+    display: none;
+  }
+
+  /* ---------------------- */
+
+
+  #node-3-22 {
+    display: none;
+  }
+
+  #node-3-21 {
+    display: none;
+  }
+
+  #node-3-20 {
+    display: none;
+  }
+
+  #node-3-19 {
+    display: none;
+  }
+
+  #node-3-18 {
+    display: none;
+  }
+
+  #node-3-17 {
+    display: none;
+  }
+
+  #node-3-16 {
+    display: none;
+  }
+
+  #node-3-15 {
+    display: none;
+  }
+
+  #node-3-14 {
+    display: none;
+  }
+
+  #node-3-13 {
+    display: none;
+  }
+
+  #node-3-12 {
+    display: none;
+  }
+
+
+  /* ----------------------------- */
+
+
+  #node-4-22 {
+    display: none;
+  }
+
+  #node-4-21 {
+    display: none;
+  }
+
+  #node-4-20 {
+    display: none;
+  }
+
+  #node-4-19 {
+    display: none;
+  }
+
+  #node-4-18 {
+    display: none;
+  }
+
+  #node-4-17 {
+    display: none;
+  }
+
+  #node-4-16 {
+    display: none;
+  }
+
+  #node-4-15 {
+    display: none;
+  }
+
+  #node-4-14 {
+    display: none;
+  }
+
+  #node-4-13 {
+    display: none;
+  }
+
+  #node-4-12 {
+    display: none;
+  }
+
+
+  /* ----------------------- */
+
+
+  #node-5-22 {
+    display: none;
+  }
+
+  #node-5-21 {
+    display: none;
+  }
+
+  #node-5-20 {
+    display: none;
+  }
+
+  #node-5-19 {
+    display: none;
+  }
+
+  #node-5-18 {
+    display: none;
+  }
+
+  #node-5-17 {
+    display: none;
+  }
+
+  #node-5-16 {
+    display: none;
+  }
+
+  #node-5-15 {
+    display: none;
+  }
+
+  #node-5-14 {
+    display: none;
+  }
+
+  #node-5-13 {
+    display: none;
+  }
+
+  #node-5-12 {
+    display: none;
+  }
+
+  /* --------------------------- */
+
+
+
+  #node-6-22 {
+    display: none;
+  }
+
+  #node-6-21 {
+    display: none;
+  }
+
+  #node-6-20 {
+    display: none;
+  }
+
+  #node-6-19 {
+    display: none;
+  }
+
+  #node-6-18 {
+    display: none;
+  }
+
+  #node-6-17 {
+    display: none;
+  }
+
+  #node-6-16 {
+    display: none;
+  }
+
+  #node-6-15 {
+    display: none;
+  }
+
+  #node-6-14 {
+    display: none;
+  }
+
+  #node-6-13 {
+    display: none;
+  }
+
+  #node-6-12 {
+    display: none;
+  }
+
+
+  /* --------------------- */
+
+
+  #node-7-22 {
+    display: none;
+  }
+
+  #node-7-21 {
+    display: none;
+  }
+
+  #node-7-20 {
+    display: none;
+  }
+
+  #node-7-19 {
+    display: none;
+  }
+
+  #node-7-18 {
+    display: none;
+  }
+
+  #node-7-17 {
+    display: none;
+  }
+
+  #node-7-16 {
+    display: none;
+  }
+
+  #node-7-15 {
+    display: none;
+  }
+
+  #node-7-14 {
+    display: none;
+  }
+
+  #node-7-13 {
+    display: none;
+  }
+
+  #node-7-12 {
+    display: none;
+  }
+
+
+  /* ---------------------- */
+
+
+  #node-8-22 {
+    display: none;
+  }
+
+  #node-8-21 {
+    display: none;
+  }
+
+  #node-8-20 {
+    display: none;
+  }
+
+  #node-8-19 {
+    display: none;
+  }
+
+  #node-8-18 {
+    display: none;
+  }
+
+  #node-8-17 {
+    display: none;
+  }
+
+  #node-8-16 {
+    display: none;
+  }
+
+  #node-8-15 {
+    display: none;
+  }
+
+  #node-8-14 {
+    display: none;
+  }
+
+  #node-8-13 {
+    display: none;
+  }
+
+  #node-8-12 {
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width:1000px){
+    
+  #node-0-49 {
+    display: none;
+  }
+
+  #node-0-48 {
+    display: none;
+  }
+
+  #node-0-47 {
+    display: none;
+  }
+
+  #node-0-46 {
+    display: none;
+  }
+  #node-0-45 {
+    display: none;
+  }
+  #node-0-44 {
+    display: none;
+  }
+  #node-0-43 {
+    display: none;
+  }
+  #node-0-42 {
+    display: none;
+  }
+  #node-0-41 {
+    display: none;
+  }
+  #node-0-40 {
+    display: none;
+  }
+  #node-0-39 {
+    display: none;
+  }
+  #node-0-38 {
+    display: none;
+  }
+  #node-0-37 {
+    display: none;
+  }
+  #node-0-36 {
+    display: none;
+  }
+  #node-0-35 {
+    display: none;
+  }
+
+  #node-0-34 {
+    display: none;
+  }
+  #node-0-33 {
+    display: none;
+  }
+  #node-0-32 {
+    display: none;
+  }
+  
+  #node-0-31 {
+    display: none;
+  }
+
+  #node-0-30 {
+    display: none;
+  }
+
+  #node-0-29 {
+    display: none;
+  }
+
+  #node-0-28 {
+    display: none;
+  }
+
+  #node-0-27 {
+    display: none;
+  }
+
+  #node-0-26 {
+    display: none;
+  }
+
+  #node-0-25 {
+    display: none;
+  }
+
+  #node-0-24 {
+    display: none;
+  }
+
+  #node-0-23 {
+    display: none;
+  }
+
+  /* ------------------------ */
+
+  #node-1-49 {
+    display: none;
+  }
+
+  #node-1-48 {
+    display: none;
+  }
+
+  #node-1-47 {
+    display: none;
+  }
+
+  #node-1-46 {
+    display: none;
+  }
+  #node-1-45 {
+    display: none;
+  }
+  #node-1-44 {
+    display: none;
+  }
+  #node-1-43 {
+    display: none;
+  }
+  #node-1-42 {
+    display: none;
+  }
+  #node-1-41 {
+    display: none;
+  }
+  #node-1-40 {
+    display: none;
+  }
+  #node-1-39 {
+    display: none;
+  }
+  #node-1-38 {
+    display: none;
+  }
+  #node-1-37 {
+    display: none;
+  }
+  #node-1-36 {
+    display: none;
+  }
+  #node-1-35 {
+    display: none;
+  }
+
+  #node-1-34 {
+    display: none;
+  }
+  #node-1-33 {
+    display: none;
+  }
+  #node-1-32 {
+    display: none;
+  }
+  
+  #node-1-31 {
+    display: none;
+  }
+
+  #node-1-30 {
+    display: none;
+  }
+
+  #node-1-29 {
+    display: none;
+  }
+
+  #node-1-28 {
+    display: none;
+  }
+
+  #node-1-27 {
+    display: none;
+  }
+
+  #node-1-26 {
+    display: none;
+  }
+
+  #node-1-25 {
+    display: none;
+  }
+
+  #node-1-24 {
+    display: none;
+  }
+
+  #node-1-23 {
+    display: none;
+  }
+
+  /* -------------------------------- */
+
+
+  #node-2-49 {
+    display: none;
+  }
+
+  #node-2-48 {
+    display: none;
+  }
+
+  #node-2-47 {
+    display: none;
+  }
+
+  #node-2-46 {
+    display: none;
+  }
+  #node-2-45 {
+    display: none;
+  }
+  #node-2-44 {
+    display: none;
+  }
+  #node-2-43 {
+    display: none;
+  }
+  #node-2-42 {
+    display: none;
+  }
+  #node-2-41 {
+    display: none;
+  }
+  #node-2-40 {
+    display: none;
+  }
+  #node-2-39 {
+    display: none;
+  }
+  #node-2-38 {
+    display: none;
+  }
+  #node-2-37 {
+    display: none;
+  }
+  #node-2-36 {
+    display: none;
+  }
+  #node-2-35 {
+    display: none;
+  }
+
+  #node-2-34 {
+    display: none;
+  }
+  #node-2-33 {
+    display: none;
+  }
+  #node-2-32 {
+    display: none;
+  }
+  
+  #node-2-31 {
+    display: none;
+  }
+
+  #node-2-30 {
+    display: none;
+  }
+
+  #node-2-29 {
+    display: none;
+  }
+
+  #node-2-28 {
+    display: none;
+  }
+
+  #node-2-27 {
+    display: none;
+  }
+
+  #node-2-26 {
+    display: none;
+  }
+
+  #node-2-25 {
+    display: none;
+  }
+
+  #node-2-24 {
+    display: none;
+  }
+
+  #node-2-23 {
+    display: none;
+  }
+
+  /* ------------------------- */
+
+
+  #node-3-49 {
+    display: none;
+  }
+
+  #node-3-48 {
+    display: none;
+  }
+
+  #node-3-47 {
+    display: none;
+  }
+
+  #node-3-46 {
+    display: none;
+  }
+  #node-3-45 {
+    display: none;
+  }
+  #node-3-44 {
+    display: none;
+  }
+  #node-3-43 {
+    display: none;
+  }
+  #node-3-42 {
+    display: none;
+  }
+  #node-3-41 {
+    display: none;
+  }
+  #node-3-40 {
+    display: none;
+  }
+  #node-3-39 {
+    display: none;
+  }
+  #node-3-38 {
+    display: none;
+  }
+  #node-3-37 {
+    display: none;
+  }
+  #node-3-36 {
+    display: none;
+  }
+  #node-3-35 {
+    display: none;
+  }
+
+  #node-3-34 {
+    display: none;
+  }
+  #node-3-33 {
+    display: none;
+  }
+  #node-3-32 {
+    display: none;
+  }
+  
+  #node-3-31 {
+    display: none;
+  }
+
+  #node-3-30 {
+    display: none;
+  }
+
+  #node-3-29 {
+    display: none;
+  }
+
+  #node-3-28 {
+    display: none;
+  }
+
+  #node-3-27 {
+    display: none;
+  }
+
+  #node-3-26 {
+    display: none;
+  }
+
+  #node-3-25 {
+    display: none;
+  }
+
+  #node-3-24 {
+    display: none;
+  }
+
+  #node-3-23 {
+    display: none;
+  }
+
+  /* ----------------------------- */
+
+  #node-4-49 {
+    display: none;
+  }
+
+  #node-4-48 {
+    display: none;
+  }
+
+  #node-4-47 {
+    display: none;
+  }
+
+  #node-4-46 {
+    display: none;
+  }
+  #node-4-45 {
+    display: none;
+  }
+  #node-4-44 {
+    display: none;
+  }
+  #node-4-43 {
+    display: none;
+  }
+  #node-4-42 {
+    display: none;
+  }
+  #node-4-41 {
+    display: none;
+  }
+  #node-4-40 {
+    display: none;
+  }
+  #node-4-39 {
+    display: none;
+  }
+  #node-4-38 {
+    display: none;
+  }
+  #node-4-37 {
+    display: none;
+  }
+  #node-4-36 {
+    display: none;
+  }
+  #node-4-35 {
+    display: none;
+  }
+
+  #node-4-34 {
+    display: none;
+  }
+  #node-4-33 {
+    display: none;
+  }
+  #node-4-32 {
+    display: none;
+  }
+  
+  #node-4-31 {
+    display: none;
+  }
+
+  #node-4-30 {
+    display: none;
+  }
+
+  #node-4-29 {
+    display: none;
+  }
+
+  #node-4-28 {
+    display: none;
+  }
+
+  #node-4-27 {
+    display: none;
+  }
+
+  #node-4-26 {
+    display: none;
+  }
+
+  #node-4-25 {
+    display: none;
+  }
+
+  #node-4-24 {
+    display: none;
+  }
+
+  #node-4-23 {
+    display: none;
+  }
+
+  /* --------------------- */
+
+  #node-5-49 {
+    display: none;
+  }
+
+  #node-5-48 {
+    display: none;
+  }
+
+  #node-5-47 {
+    display: none;
+  }
+
+  #node-5-46 {
+    display: none;
+  }
+  #node-5-45 {
+    display: none;
+  }
+  #node-5-44 {
+    display: none;
+  }
+  #node-5-43 {
+    display: none;
+  }
+  #node-5-42 {
+    display: none;
+  }
+  #node-5-41 {
+    display: none;
+  }
+  #node-5-40 {
+    display: none;
+  }
+  #node-5-39 {
+    display: none;
+  }
+  #node-5-38 {
+    display: none;
+  }
+  #node-5-37 {
+    display: none;
+  }
+  #node-5-36 {
+    display: none;
+  }
+  #node-5-35 {
+    display: none;
+  }
+
+  #node-5-34 {
+    display: none;
+  }
+  #node-5-33 {
+    display: none;
+  }
+  #node-5-32 {
+    display: none;
+  }
+  
+  #node-5-31 {
+    display: none;
+  }
+
+  #node-5-30 {
+    display: none;
+  }
+
+  #node-5-29 {
+    display: none;
+  }
+
+  #node-5-28 {
+    display: none;
+  }
+
+  #node-5-27 {
+    display: none;
+  }
+
+  #node-5-26 {
+    display: none;
+  }
+
+  #node-5-25 {
+    display: none;
+  }
+
+  #node-5-24 {
+    display: none;
+  }
+
+  #node-5-23 {
+    display: none;
+  }
+
+  /* ----------------------------------------- */
+
+
+  #node-6-49 {
+    display: none;
+  }
+
+  #node-6-48 {
+    display: none;
+  }
+
+  #node-6-47 {
+    display: none;
+  }
+
+  #node-6-46 {
+    display: none;
+  }
+  #node-6-45 {
+    display: none;
+  }
+  #node-6-44 {
+    display: none;
+  }
+  #node-6-43 {
+    display: none;
+  }
+  #node-6-42 {
+    display: none;
+  }
+  #node-6-41 {
+    display: none;
+  }
+  #node-6-40 {
+    display: none;
+  }
+  #node-6-39 {
+    display: none;
+  }
+  #node-6-38 {
+    display: none;
+  }
+  #node-6-37 {
+    display: none;
+  }
+  #node-6-36 {
+    display: none;
+  }
+  #node-6-35 {
+    display: none;
+  }
+
+  #node-6-34 {
+    display: none;
+  }
+  #node-6-33 {
+    display: none;
+  }
+  #node-6-32 {
+    display: none;
+  }
+  
+  #node-6-31 {
+    display: none;
+  }
+
+  #node-6-30 {
+    display: none;
+  }
+
+  #node-6-29 {
+    display: none;
+  }
+
+  #node-6-28 {
+    display: none;
+  }
+
+  #node-6-27 {
+    display: none;
+  }
+
+  #node-6-26 {
+    display: none;
+  }
+
+  #node-6-25 {
+    display: none;
+  }
+
+  #node-6-24 {
+    display: none;
+  }
+
+  #node-6-23 {
+    display: none;
+  }
+
+  /* ---------------------------- */
+
+  #node-7-49 {
+    display: none;
+  }
+
+  #node-7-48 {
+    display: none;
+  }
+
+  #node-7-47 {
+    display: none;
+  }
+
+  #node-7-46 {
+    display: none;
+  }
+  #node-7-45 {
+    display: none;
+  }
+  #node-7-44 {
+    display: none;
+  }
+  #node-7-43 {
+    display: none;
+  }
+  #node-7-42 {
+    display: none;
+  }
+  #node-7-41 {
+    display: none;
+  }
+  #node-7-40 {
+    display: none;
+  }
+  #node-7-39 {
+    display: none;
+  }
+  #node-7-38 {
+    display: none;
+  }
+  #node-7-37 {
+    display: none;
+  }
+  #node-7-36 {
+    display: none;
+  }
+  #node-7-35 {
+    display: none;
+  }
+
+  #node-7-34 {
+    display: none;
+  }
+  #node-7-33 {
+    display: none;
+  }
+  #node-7-32 {
+    display: none;
+  }
+  
+  #node-7-31 {
+    display: none;
+  }
+
+  #node-7-30 {
+    display: none;
+  }
+
+  #node-7-29 {
+    display: none;
+  }
+
+  #node-7-28 {
+    display: none;
+  }
+
+  #node-7-27 {
+    display: none;
+  }
+
+  #node-7-26 {
+    display: none;
+  }
+
+  #node-7-25 {
+    display: none;
+  }
+
+  #node-7-24 {
+    display: none;
+  }
+
+  #node-7-23 {
+    display: none;
+  }
+
+  /* --------------------------- */
+
+
+  #node-8-49 {
+    display: none;
+  }
+
+  #node-8-48 {
+    display: none;
+  }
+
+  #node-8-47 {
+    display: none;
+  }
+
+  #node-8-46 {
+    display: none;
+  }
+  #node-8-45 {
+    display: none;
+  }
+  #node-8-44 {
+    display: none;
+  }
+  #node-8-43 {
+    display: none;
+  }
+  #node-8-42 {
+    display: none;
+  }
+  #node-8-41 {
+    display: none;
+  }
+  #node-8-40 {
+    display: none;
+  }
+  #node-8-39 {
+    display: none;
+  }
+  #node-8-38 {
+    display: none;
+  }
+  #node-8-37 {
+    display: none;
+  }
+  #node-8-36 {
+    display: none;
+  }
+  #node-8-35 {
+    display: none;
+  }
+
+  #node-8-34 {
+    display: none;
+  }
+  #node-8-33 {
+    display: none;
+  }
+  #node-8-32 {
+    display: none;
+  }
+  
+  #node-8-31 {
+    display: none;
+  }
+
+  #node-8-30 {
+    display: none;
+  }
+
+  #node-8-29 {
+    display: none;
+  }
+
+  #node-8-28 {
+    display: none;
+  }
+
+  #node-8-27 {
+    display: none;
+  }
+
+  #node-8-26 {
+    display: none;
+  }
+
+  #node-8-25 {
+    display: none;
+  }
+
+  #node-8-24 {
+    display: none;
+  }
+
+  #node-8-23 {
+    display: none;
+  }
+
+
+  #row-13 {
+    display:none;
+  }
+
+  #row-12 {
+    display:none;
+  }
+
+
+  #row-11 {
+    display:none;
+  }
+
+  #row-10 {
+    display:none;
+  }
+
+  #row-9 {
+    display:none;
+  }
+
+
+  nav .left {
+    display: none;
+
+  }
+
+  nav .right {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:460px){
+    
+}
