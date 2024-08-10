@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/pfv/static/css/main.228dd091.css",
-    "main.js": "/pfv/static/js/main.81be2e44.js",
-    "static/js/787.ef103b65.chunk.js": "/pfv/static/js/787.ef103b65.chunk.js",
-    "static/media/head.jpg": "/pfv/static/media/head.31fd997a781ccea56726.jpg",
-    "static/media/finish.png": "/pfv/static/media/finish.232b567cebe6599912f2.png",
-    "index.html": "/pfv/index.html",
-    "main.228dd091.css.map": "/pfv/static/css/main.228dd091.css.map",
-    "main.81be2e44.js.map": "/pfv/static/js/main.81be2e44.js.map",
-    "787.ef103b65.chunk.js.map": "/pfv/static/js/787.ef103b65.chunk.js.map"
+    "main.css": "/Path-Finding-Visualizer-ReactJs/static/css/main.8dee244d.css",
+    "main.js": "/Path-Finding-Visualizer-ReactJs/static/js/main.9049cf9a.js",
+    "static/js/787.ef103b65.chunk.js": "/Path-Finding-Visualizer-ReactJs/static/js/787.ef103b65.chunk.js",
+    "static/media/head.jpg": "/Path-Finding-Visualizer-ReactJs/static/media/head.31fd997a781ccea56726.jpg",
+    "static/media/finish.png": "/Path-Finding-Visualizer-ReactJs/static/media/finish.232b567cebe6599912f2.png",
+    "index.html": "/Path-Finding-Visualizer-ReactJs/index.html",
+    "main.8dee244d.css.map": "/Path-Finding-Visualizer-ReactJs/static/css/main.8dee244d.css.map",
+    "main.9049cf9a.js.map": "/Path-Finding-Visualizer-ReactJs/static/js/main.9049cf9a.js.map",
+    "787.ef103b65.chunk.js.map": "/Path-Finding-Visualizer-ReactJs/static/js/787.ef103b65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.228dd091.css",
-    "static/js/main.81be2e44.js"
+    "static/css/main.8dee244d.css",
+    "static/js/main.9049cf9a.js"
   ]
 }
