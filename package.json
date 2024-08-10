@@ -14,7 +14,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://mhrstmi.github.io/pfv/",
+  "homepage": "https://mohammad-hosein-rostami.github.io/Path-Finding-Visualizer-ReactJs/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
